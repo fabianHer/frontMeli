@@ -1,0 +1,32 @@
+<div class="container" *ngIf="datosRespuesta">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-8">
+                    <img class="cursor" src={{datosRespuesta.items.picture}} >
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="card-text cursor" *ngIf="datosRespuesta.items.condition ==='new'">Nuevo</h5>    
+                    <h4 class="card-text cursor">{{datosRespuesta.items.title}}</h4>         
+                    <h2 class="card-title text-center">{{datosRespuesta.items.price.currency | currency}} </h2>
+                    
+                  <a href="#" class="btn btn-primary btn-lg boton">Comprar</a>                                   
+                </div> 
+                <div class="col-sm-8">
+                    <h2>Descripcion del producto</h2>
+                    <p class="card-text styleText">{{datosRespuesta.items.description}}</p>                 
+                </div>               
+            </div>
+        </div>
+      </div>
+</div>
+<div class="alert alert-info text-center" role="alert" *ngIf="esperando">
+    <strong>Cargando</strong><br>
+    <i class="fa fa-spinner fa-spin fa-2x mt-2"></i><br>
+    <span class="mt-2">Por favor espere.....</span>
+</div>
+<div class="alert alert-info text-center" role="alert" *ngIf="noData">
+    <i class="fa fa-exclamation fa-2x mt-2"></i><br>
+    <span class="mt-2">No se encontraron resultados</span>
+</div>
+

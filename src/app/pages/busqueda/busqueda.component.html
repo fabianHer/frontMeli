@@ -1,0 +1,34 @@
+<div class="container" *ngIf="this.datosRespuesta.length > 0">
+    <div class="card">
+        <div class="card-body">
+            <div class="row" *ngFor="let respuesta of datosRespuesta">
+                <div class="col-sm-4">
+                    <img class="cursor" src={{respuesta.picture}} (click)="detalleProducto(respuesta.id)">
+                </div>
+                <div class="col-sm-5">
+                    <h4 class="card-title">{{respuesta.price.currency | currency}} </h4>
+                    <img [ngClass]="{'circulo': respuesta.free_shipping}">                   
+                    <p class="card-text cursor" (click)="detalleProducto(respuesta.id)">{{respuesta.title}}</p>                  
+                                          
+                </div>
+                <div class="col-sm-3">
+                    <p class="card-text styleText">{{respuesta.id}}</p>                 
+                </div>
+            </div>
+            
+        </div>
+      </div>
+</div>
+<div class="alert alert-info text-center" role="alert" *ngIf="esperando">
+    <strong>Cargando</strong>
+    <br>
+    <i class="fa fa-spinner fa-spin fa-2x mt-2"></i>
+    <br>
+    <span class="mt-2">Por favor espere.....</span>
+</div>
+<div class="alert alert-info text-center" role="alert" *ngIf="noData">
+
+    <i class="fa fa-exclamation fa-2x mt-2"></i>
+    <br>
+    <span class="mt-2">No se encontraron resultados</span>
+</div>
