@@ -36,7 +36,7 @@ export class BusquedasService {
 
   busquedaDetalleProducto( id: string ) {
 
-    const url = `${ base_url }/buscar/detalleProducto/${ id }`;
+    const url = `${ base_url }/detalleProducto/${ id }`;
     return this.http.get( url, this.headers );
 
   }
