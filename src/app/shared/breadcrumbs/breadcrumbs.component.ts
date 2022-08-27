@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
+import { Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
@@ -15,7 +15,6 @@ export class BreadcrumbsComponent implements OnDestroy {
   public tituloSubs$: Subscription;
 
   constructor( private router: Router, 
-               private route: ActivatedRoute,
               @Inject(PLATFORM_ID) private platformId) { 
 
 
