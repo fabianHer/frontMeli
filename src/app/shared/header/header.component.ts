@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //Permite llegar al componente de buscar en el caso de que filter data contenga un valor
   buscar() {
     if (this.filterData.length === 0  ) {
       return;

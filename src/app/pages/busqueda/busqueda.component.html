@@ -1,3 +1,4 @@
+<!--Se muestran todos lo resultado según el valor de búsqueda-->
 <div class="container" *ngIf="this.datosRespuesta.length > 0">
     <div class="card">
         <div class="card-body">
@@ -19,16 +20,16 @@
         </div>
       </div>
 </div>
+
+<!--spinner cargando datos-->
 <div class="alert alert-info text-center" role="alert" *ngIf="esperando">
-    <strong>Cargando</strong>
-    <br>
-    <i class="fa fa-spinner fa-spin fa-2x mt-2"></i>
-    <br>
+    <strong>Cargando</strong><br>
+    <i class="fa fa-spinner fa-spin fa-2x mt-2"></i><br>
     <span class="mt-2">Por favor espere.....</span>
 </div>
-<div class="alert alert-info text-center" role="alert" *ngIf="noData">
 
-    <i class="fa fa-exclamation fa-2x mt-2"></i>
-    <br>
+<!--spinner No se encontraron resultados-->
+<div class="alert alert-info text-center" role="alert" *ngIf="noData">
+    <i class="fa fa-exclamation fa-2x mt-2"></i><br>
     <span class="mt-2">No se encontraron resultados</span>
 </div>

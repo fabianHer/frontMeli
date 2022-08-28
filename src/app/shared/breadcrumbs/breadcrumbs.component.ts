@@ -34,7 +34,7 @@ export class BreadcrumbsComponent implements OnDestroy {
     }
   }
 
-
+//Se obtienen las rutas
   getArgumentosRuta() {
 
     return this.router.events

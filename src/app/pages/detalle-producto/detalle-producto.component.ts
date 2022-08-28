@@ -16,10 +16,11 @@ export class DetalleProductoComponent implements OnInit {
               private busquedasService: BusquedasService) { }
 
   ngOnInit(): void {
+    //se obtiene el valor enviado por url
     this.activatedRoute.params
     .subscribe( ({ id }) => this.busquedaDetalle( id ));
   }
-
+  //se busca el producto según el id seleccionado
   busquedaDetalle(id){
     this.esperando = true;
     this.busquedasService.busquedaDetalleProducto(id).subscribe((respuesta: any) =>{
